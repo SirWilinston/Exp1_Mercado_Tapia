@@ -14,28 +14,75 @@
 
     <div class="container fondoPag">
 
-        <header>
-            <ul class="cabezal">
-                <li><a href="principal.html" target="_self"> Inicio </a></li>
-                <li><a href="causa.html" target="_self"> Nuestra causa </a></li>
-                <li><a href="imagenes.html" target="_self"> Imágenes </a></li>
-            </ul>
-        </header>
-
-        <div class="carrusel">
-            <ul class="carrusel-fotos">
-                <li id="foto1"><img src="css/img/carrusel/1 bandana.jpg" alt=""></li>
-                <li id="foto2"><img src="css/img/carrusel/2 collar.jpg" alt=""></li>
-                <li id="foto3"><img src="css/img/carrusel/3 arnes.jpg" alt=""></li>
-            </ul>
-            <ul class="carrusel-menu">
-                <li id="foto1"><img src="css/img/carrusel/1 bandana.jpg" alt=""></li>
-                <li id="foto2"><img src="css/img/carrusel/2 collar.jpg" alt=""></li>
-                <li id="foto3"><img src="css/img/carrusel/3 arnes.jpg" alt=""></li>
-            </ul>
-        </div>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                data-target="#opciones">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <a class="navbar-brand cabezal" href="#">
+                <img src="css/img/icono.ico" width="30px" height="30px">
+            </a>
+    
+            <div class="collapse navbar-collapse cabezal" id="opciones">
+                <ul class="navbar-nav">
+                    <li><a class="nav-link" href="principal.html" target="_self"> Inicio </a></li>
+                    <li><a class="nav-link" href="causa.html" target="_self"> Nuestra causa </a></li>
+                    <li><a class="nav-link" href="imagenes.html" target="_self"> Imágenes </a></li>
+                </ul>
+            </div>
+        </nav><!--cierre de menú-->
+        
+        <div class="container-fluid">
+            <div id="carousel1" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel1" data-slide-to="1"></li>
+                    <li data-target="#carousel1" data-slide-to="2"></li>
+                </ol>
+                <!--configuramos nuestras fotos-->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-50" src="css/img/carrusel/1 bandana.jpg">
+                        <div class="carousel-caption">
+                            <h3>Titulo 1</h3>
+                            <p>Descripción foto</p>
+                        </div>
+                    </div>
+    
+                    <div class="carousel-item">
+                        <img class="d-block w-50" src="css/img/carrusel/2 collar.jpg">
+                        <div class="carousel-caption">
+                            <h3>Titulo 2</h3>
+                            <p>Descripción foto</p>
+                        </div>
+                    </div>
+    
+                    <div class="carousel-item">
+                        <img class="d-block w-50" src="css/img/carrusel/3 arnes.jpg">
+                        <div class="carousel-caption">
+                            <h3>Titulo 3</h3>
+                            <p>Descripción foto</p>
+                        </div>
+                    </div>
+    
+                </div><!--carrusel inner-->
+                <a class="carousel-control-prev" href="#carousel1" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel1" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">next</span>
+                </a>
+    
+            </div><!--fin carrusel-->
 
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
 
 </body>
 </html>
