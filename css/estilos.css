@@ -21,3 +21,14 @@ a{
     font-weight: bold;
 }
 
+.carousel-item img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.carousel-caption {
+    color: black;
+    font-weight: bold;
+}
