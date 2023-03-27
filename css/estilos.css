@@ -25,10 +25,20 @@ a{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    max-width: 720px;
+    max-height: 405px;
 }
 
-.carousel-caption {
-    color: black;
-    font-weight: bold;
+.card img {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background-color: #FBDF7E;
+    border-color: #FFBE0E;
+    border-width: thick;
 }
