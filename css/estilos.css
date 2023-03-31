@@ -1,0 +1,71 @@
+body {
+    background-image: url(img/fondo.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+.fondoPag {
+    background-color: #FBDF7E;
+}
+
+a{
+    display:block;          /*opciones del menú en línea*/
+    padding:8px;            /*acolchado entre las distintas opciones*/
+    text-decoration: none;  /*eliminamos subrayado del enlace*/
+    font-size: 12pt;        /*tamaño de la fuente*/
+    font-family:  Arial, Helvetica, sans-serif;  /*tipo de fuente*/
+    color:darkorange;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.carousel-item img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
+    max-height: 405px;
+}
+
+.card img {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background-color: #FBDF7E;
+    border-color: #FFBE0E;
+    border-width: thick;
+}
+
+.video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer{
+    padding: 20px;
+    color: #1595B5;
+    background-color: #053C5E;
+    height: 280px;
+    margin-top: 20px;
+}
+
+footer div p{
+    font-size: 12px;
+    color: #888888;
+    padding-top: 5px;
+    line-height: 10px;
+}
+
+#foot {
+    margin-left: 20%;
+    margin-top: 30%;
+    width: 75%;
+}
