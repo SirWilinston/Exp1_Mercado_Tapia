@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="shortcut icon" href="css/img/icono.ico">
+    <title>Creacion de Usuario</title>
+    <script>
+        /*función que envia un saludo */
+        function Saludar(){
+            alert("Bienvenido a JavaScript! ");
+        }
+
+        /*función que muestra datos*/
+        function Mostrar(){
+            var a=document.getElementById("nom").value;
+            var b=document.getElementById("correo").value;
+            var c=parseInt(document.getElementById("edad").value);
+            if(c>=18)
+            {
+                alert("Usted "+ a + " tiene " + c + " años" + " y es mayor de edad "+
+                        "\nSu correo es: " + b);
+            }
+            else{
+                alert("Usted "+ a + " tiene " + c + " años" + " y es menor de edad "+
+                        "\nSu correo es: " + b);
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container-fluid fondoPag" style="width: 73.5%;">
+
+        <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #FEEBC1;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                data-target="#opciones">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <a class="navbar-brand cabezal" href="#">
+                <img src="css/img/icono.ico" width="30px" height="30px">
+            </a>
+    
+            <div class="collapse navbar-collapse cabezal" id="opciones">
+                <ul class="navbar-nav">
+                    <li><a class="nav-link" href="principal.html" target="_self"> Inicio </a></li>
+                    <li><a class="nav-link" href="causa.html" target="_self"> Nuestra causa </a></li>
+                    <li><a class="nav-link" href="imagenes.html" target="_self"> Imágenes </a></li>
+                    <li><a class="nav-link" href="formulario.html" target="_self"> Registro de usuario</a></li>
+                    <li><a class="nav-link" href="adopcion.html" target="_self"> Adopta un Perrito</a></li>
+                </ul>
+            </div>
+        </nav><!--cierre de menú-->
+
+        <br>
+
+        <div class="container">
+            <h1>Creacion de Cuenta</h1>
+            <!--creación de fomulario-->
+            <form action="#" method="post" enctype="text/plain" name="datos">
+    
+                <div class="form-group">
+                    <label for="nom">Nombre : </label>
+                    <input type="text" id="nom" name="nom" 
+                        placeholder="Digite su nombre.." class="form-control" 
+                        minlength="3" maxlength="50" required>
+                </div>    
+    
+                <div class="form-group">
+                    <label for="correo">Correo : </label>
+                    <input type="text" id="correo" name="correo" required
+                        placeholder="Cachupin@dog.cl" class="form-control">
+                </div>
+    
+                <div class="form-group">
+                    <label for="pass">Contraseña : </label>
+                    <input type="password" id="pass" name="pass"
+                        placeholder="Digite su password.." class="form-control" 
+                        minlength="8" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="pass2">Repetir Contraseña: </label>
+                    <input type="password" id="pass2" name="pass2" required
+                        minlength="8" class="form-control">
+                </div>
+    
+                <div class="form-group">
+                    <label for="edad">Edad : </label>
+                    <input type="number" class="form-control" min="16" max="110"
+                     placeholder="Digite su edad.." required id="edad" name="edad">
+                </div>
+    
+                <div class="form-group">
+                    <label for="fono">Teléfono : </label>
+                    <input type="number" id="fono" name="fono" required
+                        minlength="9"  class="form-control">
+                </div>
+    
+                <div class="form-group">
+                    <label for="fecha">Fecha de Nacimiento: </label>
+                    <input type="date" id="fecha" name="fecha" required
+                        min="1950-01-01" class="form-control">
+                </div>
+    
+                <div class="form-group">
+                    <label for="estado">Estado Civil : </label>
+                    <select id="estado" class="form-control">
+                        <option value="0">Seleccione su estado civil..</option>
+                        <option value="1">Soltero/a</option>
+                        <option value="2">Casado/a</option>
+                        <option value="3">Viudo/a</option>
+                        <option value="4">Separado/a</option>
+                    </select>
+                </div>    
+    
+                <div class="form-group">
+                    <label for="comuna">Comuna : </label>
+                    <select id="comuna" class="form-control">
+                        <option value="0">Seleccione una comuna..</option>
+                        <option value="1">Maipú</option>
+                        <option value="2">Cerrillos</option>
+                        <option value="3">Padre Hurtado</option>
+                        <option value="4">Las condes</option>
+                        <option value="5">Otra comuna</option>
+                    </select>
+    
+                </div>
+    
+                <input type="submit" value="Enviar datos" class="btn btn-primary">
+                <input type="reset" value="Limpiar" class="btn btn-success">
+    
+            </form>
+        </div>
+
+        <footer class="container-fluid" style="background-color: #FEEBC1; height: 100%;">
+            <div class="row col-12">
+                <div class="col-lg-2">
+                    <img src="css/img/icono.ico" id="foot">   
+                </div>
+                <div class="col-lg-4">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link" href="principal.html" target="_self"> Inicio </a></li>
+                        <li><a class="nav-link" href="causa.html" target="_self"> Nuestra causa </a></li>
+                        <li><a class="nav-link" href="imagenes.html" target="_self"> Imágenes </a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3">
+                    <h5>Síguenos</h5>
+                    <br>
+                    <div class="row">
+                        <a href="https://www.facebook.com">
+                        <img src="css/img/icono facebook 3.png" alt="" width="30px" height="30px" style=" margin-left: 15px;" >
+                        </a>
+                        <a href="https://www.twitter.com">    
+                        <img src="css/img/icono twitter 3.png" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+                        </a>
+                        <a href="https://www.instagram.com">  
+                        <img src="css/img/icono de instagram 2.png" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+                        </a>     
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Contacto</h5>
+                    <br>
+                    <div class="row">
+                        <img src="css/img/icono maps.png" alt="" width="20px" height="20px"
+                            style="margin-right: 10px; margin-left: 15px;">
+                        <p>Av. Esq. Blanca 501, Maipú</p>
+                    </div>
+                    <div class="row">
+                        <img src="css/img/icono de telefono 2.png" alt="" width="20px" height="20px"
+                            style="margin-right: 10px; margin-left: 15px;">
+                        <p>225554000</p>
+                    </div>
+                    <div class="row">
+                        <img src="css/img/icono de correo.png" alt="" width="20px" height="20px"
+                            style="margin-right: 10px; margin-left: 15px;">
+                        <p>consulta@CanelitaStore.cl</p>
+                    </div>
+                    <br>
+    
+                    <p>&copy; Canelita Store- 2023</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+</body>
+</html>

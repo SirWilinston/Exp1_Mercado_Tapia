@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="shortcut icon" href="css/img/icono.ico">
+    <title>Adopta una Mascota</title>
+    <script>
+        $(document).ready(function(){
+
+            $("#enviar").click(function(){
+                $.get("https://www.themealdb.com/api/json/v1/1/categories.php",function(data){
+        
+                $.each(data.categories,function(i, item){
+                $("#categorias").append("<tr><td>"+ item.idCategory +"</td><td>"+ item.strCategory +
+                    "</td><td><img src='"+ item.strCategoryThumb+"'>"+
+                    "</td><td>" + item.strCategoryDescription+ "</td></tr>");
+            })
+        });
+
+    })
+
+});
+
+
+
+    </script>
+</head>
+<body>
+
+    <div class="container-fluid fondoPag" style="width: 73.5%;">
+
+        <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #FEEBC1;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                data-target="#opciones">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <a class="navbar-brand cabezal" href="#">
+                <img src="css/img/icono.ico" width="30px" height="30px">
+            </a>
+    
+            <div class="collapse navbar-collapse cabezal" id="opciones">
+                <ul class="navbar-nav">
+                    <li><a class="nav-link" href="principal.html" target="_self"> Inicio </a></li>
+                    <li><a class="nav-link" href="causa.html" target="_self"> Nuestra causa </a></li>
+                    <li><a class="nav-link" href="imagenes.html" target="_self"> Imágenes </a></li>
+                    <li><a class="nav-link" href="formulario.html" target="_self"> Registro de usuario</a></li>
+                    <li><a class="nav-link" href="adopcion.html" target="_self"> Adopta un Perrito</a></li>
+                </ul>
+            </div>
+        </nav><!--cierre de menú-->
+
+        <br>
+
+        <div class="container">
+            <h2></h2><br<br>
+            <input type="button" id="enviar" value="Nuestros Perritos" 
+                class="btn btn-success"><br<br>
+    
+            <table class="table" id="categorias">
+                              <!--creamos una fila-->
+                    <thead>         <!--creamos encabezado de tabla-->
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Imagen</th>
+                            <th>Descripción</th>    
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+    
+                    </tbody>
+            </table>
+    
+    
+        </div>
+
+        <footer class="container-fluid" style="background-color: #FEEBC1; height: 100%;">
+            <div class="row col-12">
+                <div class="col-lg-2">
+                    <img src="css/img/icono.ico" id="foot">   
+                </div>
+                <div class="col-lg-4">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link" href="principal.html" target="_self"> Inicio </a></li>
+                        <li><a class="nav-link" href="causa.html" target="_self"> Nuestra causa </a></li>
+                        <li><a class="nav-link" href="imagenes.html" target="_self"> Imágenes </a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3">
+                    <h5>Síguenos</h5>
+                    <br>
+                    <div class="row">
+                        <a href="https://www.facebook.com">
+                        <img src="css/img/icono facebook 3.png" alt="" width="30px" height="30px" style=" margin-left: 15px;" >
+                        </a>
+                        <a href="https://www.twitter.com">    
+                        <img src="css/img/icono twitter 3.png" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+                        </a>
+                        <a href="https://www.instagram.com">  
+                        <img src="css/img/icono de instagram 2.png" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+                        </a>     
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Contacto</h5>
+                    <br>
+                    <div class="row">
+                        <img src="css/img/icono maps.png" alt="" width="20px" height="20px"
+                            style="margin-right: 10px; margin-left: 15px;">
+                        <p>Av. Esq. Blanca 501, Maipú</p>
+                    </div>
+                    <div class="row">
+                        <img src="css/img/icono de telefono 2.png" alt="" width="20px" height="20px"
+                            style="margin-right: 10px; margin-left: 15px;">
+                        <p>225554000</p>
+                    </div>
+                    <div class="row">
+                        <img src="css/img/icono de correo.png" alt="" width="20px" height="20px"
+                            style="margin-right: 10px; margin-left: 15px;">
+                        <p>consulta@CanelitaStore.cl</p>
+                    </div>
+                    <br>
+    
+                    <p>&copy; Canelita Store- 2023</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+</body>
+</html>
