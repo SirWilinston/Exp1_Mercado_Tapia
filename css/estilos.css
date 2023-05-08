@@ -48,3 +48,24 @@ a{
     margin-left: auto;
     margin-right: auto;
 }
+
+footer{
+    padding: 20px;
+    color: #1595B5;
+    background-color: #053C5E;
+    height: 280px;
+    margin-top: 20px;
+}
+
+footer div p{
+    font-size: 12px;
+    color: #888888;
+    padding-top: 5px;
+    line-height: 10px;
+}
+
+#foot {
+    margin-left: 20%;
+    margin-top: 30%;
+    width: 75%;
+}
