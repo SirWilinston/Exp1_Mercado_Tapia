@@ -8,6 +8,7 @@ body {
 
 .fondoPag {
     background-color: #FBDF7E;
+    border-radius: 10px;
 }
 
 a{
@@ -35,6 +36,33 @@ a{
     margin-right: auto;
     margin-top: 25px;
     margin-bottom: 25px;
+}
+
+.image-container{
+    display: grid;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-img{
+    font-size: 40px;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+
+.navbar-expand-sm{
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+.imagen{
+    width: 225px;
+    height: 225px;
+    border-radius: 15px;
+    border: solid;
+    border-color: darkorange;
 }
 
 .card {

@@ -8,9 +8,25 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
     <link rel="shortcut icon" href="css/img/icono.ico">
+    <title>Reloj con Javascript</title>
+<script language="JavaScript">
+function mueveReloj(){
+    momentoActual = new Date()
+    hora = momentoActual.getHours()
+    minuto = momentoActual.getMinutes()
+    segundo = momentoActual.getSeconds()
+
+    horaImprimible = hora + " : " + minuto + " : " + segundo
+
+    document.form_reloj.reloj.value = horaImprimible
+
+    setTimeout("mueveReloj()",1000)
+}
+</script>
     <title>Página de Inicio</title>
 </head>
 <body>
+    
     <audio autoplay="true" loop="true">
         <source src="musica/y2mate.com - canelita cantando mi mama me trajo papitas y taco.mp3" type="audio/mpeg">
     </audio>
@@ -32,7 +48,7 @@
                     <li><a class="nav-link" href="causa.html" target="_self"> Nuestra causa </a></li>
                     <li><a class="nav-link" href="imagenes.html" target="_self"> Imágenes </a></li>
                     <li><a class="nav-link" href="formulario.html" target="_self"> Registro de usuario</a></li>
-                    <li><a class="nav-link" href="adopcion.html" target="_self"> Adopta un Perrito</a></li>
+                    <li><a class="nav-link" href="adopcion.html" target="_self"> Adopta un Perrito</a></li>                   
 
                 </ul>
             </div>
@@ -168,6 +184,15 @@
                     <p>&copy; Canelita Store- 2023</p>
                 </div>
             </div>
+            <body onload="mueveReloj()">
+
+                Aqui la hora con Canelita es  
+                
+                <form name="form_reloj">
+                    <input type="text" name="reloj" size="20" style="background-color : #FBDF7E; color : black; font-family : Verdana, Arial, Helvetica; font-size : 8pt; text-align : center;">
+                </form>
+                
+                </body>
         </footer>
     </div>
 
