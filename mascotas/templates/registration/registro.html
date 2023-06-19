@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <link rel="shortcut icon" href="{% static 'css/img/icono.ico' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <title>Registro de usuario</title>
+    <script language="JavaScript">
+        function mueveReloj(){
+            momentoActual = new Date()
+            hora = momentoActual.getHours()
+            minuto = momentoActual.getMinutes()
+            segundo = momentoActual.getSeconds()
+        
+            horaImprimible = hora + " : " + minuto + " : " + segundo
+        
+            document.form_reloj.reloj.value = horaImprimible
+        
+            setTimeout("mueveReloj()",1000)
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container-fluid fondoPag" style="width: 73.5%;">
+
+        <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #FEEBC1;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                data-target="#opciones">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <a class="navbar-brand cabezal" href="{% url 'principal' %}">
+                <img src="{% static 'css/img/icono.ico' %}" width="30px" height="30px">
+            </a>
+    
+            <div class="collapse navbar-collapse cabezal" id="opciones">
+                <ul class="navbar-nav">
+                    <li><a class="nav-link" href="{% url 'principal' %}" target="_self"> Inicio </a></li>
+                    <li><a class="nav-link" href="{% url 'causa' %}" target="_self"> Nuestra causa </a></li>
+                    <li><a class="nav-link" href="{% url 'imagenes' %}" target="_self"> Imágenes </a></li>
+                    <li><a class="nav-link" href="{% url 'formulario' %}" target="_self"> Registro de asociado </a></li>
+                    <li><a class="nav-link" href="{% url 'adopcion' %}" target="_self"> Adopta un Perrito </a></li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a class="nav-link" href="{% url 'logout' %}" target="_self">
+                            <img src="{% static 'css/img/user-icon.png' %}" width="15px" height="15px">
+                            Cerrar sesión 
+                        </a></li>
+                    {% else %}
+                    <li>
+                        <a class="nav-link" href="{% url 'login' %}" target="_self">
+                            <img src="{% static 'css/img/user-icon.png' %}" width="15px" height="15px">
+                            Iniciar sesión
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav><!--cierre de menú-->
+
+        {% load crispy_forms_tags %}
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 offset-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>Registro de usuario</h3>
+                            <hr>
+                            <form action="#" method="post">
+                                {% csrf_token %}
+                                {{ form | crispy }}
+                                <a href="{% url 'principal' %}" class="btn btn-success">Volver al inicio</a>
+                                <a href="{% url 'login' %}" class="btn btn-success">Iniciar sesión</a>
+                                <input type="submit" value="Registrarse" class="btn btn-success" style="float: right;">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="container-fluid" style="background-color: #FEEBC1; height: 100%;">
+            <div class="row col-12">
+                <div class="col-lg-2">
+                    <img src="{% static 'css/img/icono.ico' %}" id="foot">   
+                </div>
+                <div class="col-lg-4">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link" href="{% url 'principal' %}" target="_self"> Inicio </a></li>
+                        <li><a class="nav-link" href="{% url 'causa' %}" target="_self"> Nuestra causa </a></li>
+                        <li><a class="nav-link" href="{% url 'imagenes' %}" target="_self"> Imágenes </a></li>
+                        <li><a class="nav-link" href="{% url 'formulario' %}" target="_self"> Formulario </a></li>
+                        <li><a class="nav-link" href="{% url 'adopcion' %}" target="_self"> Adopta </a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3">
+                    <h5>Síguenos</h5>
+                    <br>
+                    <div class="row">
+                        <a href="https://www.facebook.com">
+                        <img src="{% static 'css/img/icono facebook 3.png' %}" alt="" width="30px" height="30px" style=" margin-left: 15px;" >
+                        </a>
+                        <a href="https://www.twitter.com">    
+                        <img src="{% static 'css/img/icono twitter 3.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+                        </a>
+                        <a href="https://www.instagram.com">  
+                        <img src="{% static 'css/img/icono de instagram 2.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+                        </a>     
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Contacto</h5>
+                    <br>
+                    <div class="row">
+                        <img src="{% static 'css/img/icono maps.png' %}" alt="" width="20px" height="20px"
+                            style="margin-right: 10px; margin-left: 15px;">
+                        <p>Av. Esq. Blanca 501, Maipú</p>
+                    </div>
+                    <div class="row">
+                        <img src="{% static 'css/img/icono de telefono 2.png' %}" alt="" width="20px" height="20px"
+                            style="margin-right: 10px; margin-left: 15px;">
+                        <p>225554000</p>
+                    </div>
+                    <div class="row">
+                        <img src="{% static 'css/img/icono de correo.png' %}" alt="" width="20px" height="20px"
+                            style="margin-right: 10px; margin-left: 15px;">
+                        <p>consulta@CanelitaStore.cl</p>
+                    </div>
+                    <br>
+    
+                    <p>&copy; Canelita Store- 2023</p>
+                </div>
+            </div>
+            <body onload="mueveReloj()">
+
+                Aqui la hora con Canelita es  
+                
+                <form name="form_reloj">
+                    <input type="text" name="reloj" size="20" style="background-color : #FBDF7E; color : black; font-family : Verdana, Arial, Helvetica; font-size : 8pt; text-align : center;">
+                </form>
+                
+                </body>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+
+</body>
+</html>
