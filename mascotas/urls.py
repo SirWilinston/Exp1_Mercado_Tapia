@@ -1,6 +1,5 @@
 from django.urls import path
-from .views import principal, causa, formulario, adopcion, imagenes, registro, ingreso_productos, modificar, mostrar_productos, eliminar, mostrar_asociados
-
+from mascotas.views import *
 urlpatterns=[
     path('', principal, name="principal"),
     path('causa/', causa, name="causa"),
@@ -14,4 +13,11 @@ urlpatterns=[
     path('eliminar/<id>', eliminar, name="eliminar"),
     path('mostrar-asociados/', mostrar_asociados, name= "mostrar_asociados"),
 
+    path('tienda/',tienda, name="tienda"),
+    path('tienda/',tienda, name="tienda"),
+    path('generarBoleta/', generarBoleta, name="generarBoleta"),
+    path('agregar/<id>', agregar_producto, name="agregar"),
+    path('eliminar/<id>', eliminar_producto, name="eliminar"),
+    path('restar/<id>', restar_producto, name="restar"),
+    path('limpiar/', limpiar_carrito, name="limpiar"),
 ]
